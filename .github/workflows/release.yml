@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - llp_action_test
 jobs:
   release_bin:
     name: Release Binaries
@@ -20,7 +20,7 @@ jobs:
           yarn
       - name: Get Release Details
         id: release_details
-        uses: botpress/gh-actions/get_release_details@master
+        uses: botpress/gh-actions/get_release_details@llp_fix_duplicates_in_release_notes
       - name: Fix Change Log
         id: changelog
         run: |
@@ -28,20 +28,3 @@ jobs:
           echo "Is new release?: ${{ steps.release_details.outputs.is_new_release }}"
           echo "Version: ${{ steps.release_details.outputs.version }}"
           echo "Latest Tag: ${{ steps.release_details.outputs.latest_tag }}"
-      - name: 'Build and Package'
-        if: ${{ steps.release_details.outputs.is_new_release == 'true' }}
-        run: |
-          yarn build --prod
-          yarn package
-      - name: 'Release'
-        if: ${{ steps.release_details.outputs.is_new_release == 'true' }}
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./bin/studio-v*
-          prerelease: false
-          draft: false
-          body: ${{ steps.changelog.outputs.value }}
-          name: v${{ steps.release_details.outputs.version }}
-          tag_name: v${{ steps.release_details.outputs.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
