@@ -28,7 +28,7 @@ jobs:
 
       - name: Get Release Details
         id: release_details
-        uses: botpress/gh-actions/get_release_details@213e5e528d6c4a6dace3ff042995ea6a0e0ba1f0
+        uses: botpress/gh-actions/get_release_details@cc23f88b0205cd703d689ff5ce6a9a2063442856
 
       - name: Fetch Node Packages
         run: yarn boom
