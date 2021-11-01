@@ -1,7 +1,5 @@
 name: Pre-Release
-on:
-  pull_request:
-    types: [review_requested]
+on: [push]
 
 jobs:
   pre_release_bin:
@@ -30,10 +28,10 @@ jobs:
 
       - name: Get Release Details
         id: release_details
-        uses: botpress/gh-actions/get_release_details@master
+        uses: botpress/gh-actions/get_release_details@llp_fix_duplicates_in_release_notes
 
       - name: Fetch Node Packages
-        run: yarn
+        run: yarn boom
 
       - name: Build Project
         run: yarn build --prod
