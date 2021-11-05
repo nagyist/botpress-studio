@@ -77,7 +77,7 @@ This is a fatal error, process will exit.`
     }
   })
 
-  logger.info(chalk.gray(`Studio is listening at: ${process.LOCAL_URL}`))
+  logger.info(`Studio is listening at: ${process.LOCAL_URL}`)
 }
 
 start().catch(global.printErrorDefault)

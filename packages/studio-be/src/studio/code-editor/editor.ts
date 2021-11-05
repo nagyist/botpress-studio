@@ -124,8 +124,8 @@ export class Editor {
       const typings = await fse.readFile(filePath, 'utf-8')
 
       fileContent = typings.toString()
-      if (name === 'botpress.d.ts' || name === 'botpress.runtime.d.ts') {
-        fileContent = fileContent.replace("'botpress/sdk'", 'sdk').replace("'botpress/runtime-sdk'", 'sdk')
+      if (name === 'botpress.runtime.d.ts') {
+        fileContent = fileContent.replace("'botpress/runtime-sdk'", 'sdk')
       }
     } catch (err) {
       this.logger.warn(`Couldn't load file ${filePath} `)
@@ -151,7 +151,6 @@ export class Editor {
 
     const files = [
       { name: 'node.d.ts', location: path.join(__dirname, '/../../typings/node.d.txt') },
-      { name: 'botpress.d.ts', location: path.join(__dirname, '/../../sdk/botpress.d.txt') },
       { name: 'botpress.runtime.d.ts', location: path.join(__dirname, '/../../sdk/botpress.runtime.d.txt') },
       // Required so array.includes() can be used without displaying an error
       { name: 'es6include.d.ts', location: path.join(__dirname, '/../../typings/es6include.txt') }

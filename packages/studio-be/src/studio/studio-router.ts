@@ -208,7 +208,6 @@ export class StudioRouter extends CustomRouter {
               window.APP_CUSTOM_CSS = "${branding.customCss}";
               window.BOT_LOCKED = ${!!bot.locked};
               window.IS_BOT_MOUNTED = ${this.botService.isBotMounted(botId)};
-              window.IS_CLOUD_BOT = ${!bot.standalone}
             })(typeof window != 'undefined' ? window : {})
           `
 

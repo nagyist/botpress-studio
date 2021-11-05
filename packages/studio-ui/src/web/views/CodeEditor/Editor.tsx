@@ -198,10 +198,6 @@ class Editor extends React.Component<Props> {
   loadTypings = async () => {
     const typings = await this.props.fetchTypings()
 
-    if (window.IS_CLOUD_BOT && typings['botpress.runtime.d.ts']) {
-      delete typings['botpress.d.ts']
-    }
-
     this.setSchemas(typings)
 
     _.forEach(typings, (content, name) => {

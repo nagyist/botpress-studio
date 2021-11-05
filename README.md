@@ -27,8 +27,10 @@ There are various endpoints that must be configured to get every features workin
 ### Discussion points
 
 - There are still some configurations related to the studio which had to be put somewhere, for now they are in the bot's "internal"
-- How white label will be implemented?
+- How/will white label will be implemented?
 - We have realtime between studio backend/frontend, but the bottom panel is kind of useless (no logs, cant change debug, no debugger)
+- What version is displayed in the bottom left corner, studio or runtime? Like a dropdown to select which runtime to use?
+- Should there be a more user-friendly mechanism to configure various endpoints other than editing the .env file?
 
 ## Release workflow
 

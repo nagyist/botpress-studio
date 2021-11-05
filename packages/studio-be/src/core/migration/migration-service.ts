@@ -66,7 +66,7 @@ export class MigrationService {
     }
   }
 
-  public async getMigrationOpts(metadata?: sdk.MigrationMetadata): Promise<MigrationOpts> {
+  public async getMigrationOpts(metadata?: MigrationMetadata): Promise<MigrationOpts> {
     return {
       ghostService: this.bpfs,
       logger: this.logger,
@@ -155,7 +155,7 @@ export interface MigrationOpts {
   botService: BotService
   configProvider: ConfigProvider
   inversify: Container
-  metadata: sdk.MigrationMetadata
+  metadata: MigrationMetadata
 }
 
 export type MigrationType = 'database' | 'config' | 'content'
@@ -167,6 +167,18 @@ export interface Migration {
     target?: MigrationTarget
     type: MigrationType
   }
-  up: (opts: MigrationOpts) => Promise<sdk.MigrationResult>
-  down?: (opts: MigrationOpts) => Promise<sdk.MigrationResult>
+  up: (opts: MigrationOpts) => Promise<MigrationResult>
+  down?: (opts: MigrationOpts) => Promise<MigrationResult>
+}
+
+export interface MigrationResult {
+  success: boolean
+  /** Indicates if the migration had to be executed  */
+  hasChanges?: boolean
+  message?: string
+}
+
+export interface MigrationMetadata {
+  botId?: string
+  isDryRun?: boolean
 }

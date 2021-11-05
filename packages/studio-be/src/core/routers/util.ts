@@ -1,15 +1,8 @@
-import { Logger, StrategyUser } from 'botpress/sdk'
-import { TokenUser } from 'common/typings'
 import { asBytes } from 'core/misc/utils'
-import { NextFunction, Request, Response } from 'express'
-import Joi from 'joi'
+import { Response } from 'express'
 import mime from 'mime-types'
 import multer from 'multer'
 import onHeaders from 'on-headers'
-
-import { BadRequestError } from './errors'
-
-// TODO: Remove BPRequest, AsyncMiddleware and asyncMiddleware from this file
 
 export const monitoringMiddleware = (req, res, next) => {
   const startAt = Date.now()

@@ -32,7 +32,7 @@ const Toolbar: FC<Props> = props => {
   }
 
   const pushRuntime = () => {
-    console.log('run')
+    console.log('push to runtime')
   }
 
   return (
@@ -64,7 +64,7 @@ const Toolbar: FC<Props> = props => {
           <span className={style.label}>{lang.tr('Export archive')}</span>
         </button>
 
-        {window.MESSAGING_ENDPOINT && (
+        {window.RUNTIME_ENDPOINT && (
           <button className={style.item} id="toggle-bot-archive" onClick={pushRuntime}>
             <Icon color="#1a1e22" icon="export" iconSize={16} />
             <span className={style.label}>{lang.tr('Push to runtime')}</span>
