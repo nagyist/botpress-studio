@@ -2,8 +2,7 @@ import 'bluebird-global'
 // eslint-disable-next-line import/order
 import '../../sdk/rewire'
 
-import chalk from 'chalk'
-import { BotpressApp, createApp } from 'core/app/loader'
+import { createApp } from 'core/app/loader'
 import { LoggerProvider, LogLevel } from 'core/logger'
 import fs from 'fs'
 import _ from 'lodash'

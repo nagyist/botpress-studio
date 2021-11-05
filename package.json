@@ -39,7 +39,7 @@
     "build": "yarn cmd build",
     "package": "yarn cmd package:studio",
     "watch": "yarn cmd watch:studio",
-    "start": "yarn cmd start:studio",
+    "start": "yarn workspace studio-be start",
     "release": "node ./scripts/utils/release",
     "prettier": "cross-env prettier --check './packages/**/*.ts'",
     "eslint": "cross-env eslint packages/ --ext .ts,.tsx"

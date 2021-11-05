@@ -9,6 +9,7 @@ import { getAppDataPath } from './core/misc/app_data'
 import { Debug } from './debug'
 import getos from './getos'
 import metadata from './metadata.json'
+import chalk from 'chalk'
 
 const printPlainError = err => {
   /* eslint-disable no-console */
@@ -91,8 +92,10 @@ try {
         const botId = argv._?.[0]
 
         if (!botId) {
-          console.error("Please provide the path to a bot folder 'studio.exe /path/to/data'.  ")
-          process.exit(1)
+          console.error(chalk.bold('\nNo bot specified'))
+          console.error(`Please provide the path to a bot folder, ex: 'studio.exe /path/to/data'. 
+If the bot doesn't exist, it will be created. Use --template "templateId" to create your bot from a specific template\n`)
+          process.exit(0)
         }
 
         process.BOT_LOCATION = path.resolve(botId)
