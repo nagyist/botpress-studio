@@ -5,7 +5,6 @@ import { CMSService } from 'core/cms'
 import { StudioConfig, ConfigProvider } from 'core/config'
 import { LoggerFilePersister, LoggerProvider } from 'core/logger'
 import { MigrationService } from 'core/migration'
-import { copyDir } from 'core/misc/pkg-fs'
 import { RealtimeService } from 'core/realtime'
 import { HintsService } from 'core/user-code'
 import { WrapErrorsWith } from 'errors'
@@ -71,7 +70,6 @@ export class Botpress {
 
     await this.checkNLUEndpoint()
     await this.initializeServices()
-    await this.deployAssets()
     await this.startServer()
     await this.startRealtime()
     await this.discoverBots()
@@ -81,24 +79,6 @@ export class Botpress {
 
   async checkNLUEndpoint() {
     process.NLU_ENDPOINT = process.env.NLU_ENDPOINT
-  }
-
-  async deployAssets() {
-    try {
-      const assets = path.resolve(process.TEMP_LOCATION, 'assets/studio/ui')
-
-      // Avoids overwriting the folder when developing locally on the studio
-      if (fse.pathExistsSync(`${assets}/public`)) {
-        const studioPath = fse.lstatSync(`${assets}/public`)
-        if (studioPath.isSymbolicLink()) {
-          return
-        }
-      }
-
-      await copyDir(path.join(__dirname, '../../ui'), assets)
-    } catch (err) {
-      this.logger.attachError(err).error('Error deploying assets')
-    }
   }
 
   @WrapErrorsWith('Error while discovering bots')

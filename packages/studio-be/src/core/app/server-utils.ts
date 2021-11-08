@@ -38,5 +38,10 @@ export const resolveStudioAsset = (file: string) => {
     return path.resolve(process.PROJECT_LOCATION, '../../studio-ui/', file)
   }
 
+  const filePath = path.resolve(__dirname, '../../ui', file)
+  if (fs.existsSync(filePath)) {
+    return filePath
+  }
+
   return path.resolve(process.TEMP_LOCATION, 'assets/studio/ui', file)
 }
