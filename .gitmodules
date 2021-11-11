@@ -1,0 +1,3 @@
+[submodule "packages/typings"]
+	path = packages/typings
+	url = git@github.com:botpress/typings.git

@@ -18,6 +18,7 @@
     },
     "types": ["reflect-metadata", "jest"]
   },
-  "include": ["src/**/*.ts", "src/*.ts"],
+  "references": [{ "path": "../typings/" }],
+ 
   "exclude": ["e2e/**", "out/**", "**/node_modules/**/*.(ts|js)", "**/static/**/*.(js|ts)"]
 }

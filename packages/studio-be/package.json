@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "cd ./out && cross-env NODE_PATH=./ cross-env BP_MODULES_PATH=B:/bp18/modules node index.js",
-    "build": "yarn clean && yarn tsc",
+    "build": "yarn tsc --build",
     "clean": "node ./node_modules/rimraf/bin.js ./out",
     "watch": "yarn tsc --watch"
   },
@@ -18,6 +18,7 @@
     "@apidevtools/json-schema-ref-parser": "^9.0.7",
     "@botpress/native-extensions": "0.0.1",
     "@botpress/nlu-client": "1.0.0-rc.2",
+    "@botpress/typings": "12.22.2",
     "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "bluebird-global": "^1.0.1",
