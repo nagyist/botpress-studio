@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { AccessControl } from '~/components/Shared/Utils'
 
 import { RootReducer } from '../../../reducers'
+import { CTAButton } from '../BotpressEntrepriseCTA'
 
 import style from './style.scss'
 
@@ -27,6 +28,7 @@ const Toolbar: FC<Props> = props => {
   return (
     <header className={style.toolbar}>
       <div className={style.list}>
+        <CTAButton />
         {!!hasDoc && (
           <Fragment>
             <Tooltip

@@ -1,0 +1,55 @@
+.cta {
+  &__main {
+    text-align: center;
+    font-weight: bold;
+    margin: 1.5rem 0;
+  }
+  &__btn {
+    background-color: rgb(50, 118, 234);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    margin: 0 8px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: rgb(202, 215, 245);
+      color: rgb(50, 118, 234);
+    }
+    &__big {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+    &__close {
+      background: transparent;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  &__title {
+    padding-left: 1rem;
+    color: rgb(50, 118, 234);
+    font-weight: 600;
+  }
+  &__feature {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    &__icon {
+      flex-shrink: 0;
+    }
+    &__content {
+      margin-left: 1rem;
+    }
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
