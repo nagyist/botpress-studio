@@ -37,7 +37,7 @@ const webConfig = {
       '~': path.resolve(__dirname, './src/web'),
       common: path.resolve(__dirname, '../studio-be/out/common'),
       'botpress/shared': 'ui-shared',
-      'botpress/sdk': path.resolve(__dirname, '../studio-be/src/sdk/botpress.d.ts')
+      'botpress/sdk': path.resolve(__dirname, '../typings/sdk/botpress.d.ts')
     }
   },
   optimization: {

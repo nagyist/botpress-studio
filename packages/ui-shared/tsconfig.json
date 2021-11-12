@@ -19,7 +19,7 @@
     "baseUrl": "./src",
     "paths": {
       "~/*": ["*"],
-      "botpress/sdk": ["../../studio-be/src/sdk/botpress.d.ts"],
+      "botpress/sdk": ["../../typings/sdk/botpress.d.ts"],
       "common/*": ["../../studio-be/src/common/*"],
       "@blueprintjs/core": ["../../studio-ui/node_modules/@blueprintjs/core"],
       "@blueprintjs/select": ["../../studio-ui/node_modules/@blueprintjs/select"],

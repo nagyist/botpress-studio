@@ -58,8 +58,8 @@ const copyBuiltin = async () => {
   await fse.copy(`${studioRoot}/src/builtin`, `${studioRoot}/out/builtin`)
   await fse.copy(`${studioRoot}/src/typings/node.d.txt`, `${studioRoot}/out/typings/node.d.txt`)
   await fse.copy(`${studioRoot}/src/typings/es6include.txt`, `${studioRoot}/out/typings/es6include.txt`)
-  await fse.copy(`${studioRoot}/src/sdk/botpress.d.ts`, `${studioRoot}/out/sdk/botpress.d.txt`)
-  await fse.copy(`${studioRoot}/src/sdk/botpress.runtime.d.ts`, `${studioRoot}/out/sdk/botpress.runtime.d.txt`)
+  await fse.copy(`./packages/typings/sdk/botpress.d.ts`, `${studioRoot}/out/sdk/botpress.d.txt`)
+  await fse.copy(`./packages/typings/sdk/botpress.runtime.d.ts`, `${studioRoot}/out/sdk/botpress.runtime.d.txt`)
 }
 
 const package = async () => {

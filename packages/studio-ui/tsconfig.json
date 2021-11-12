@@ -16,7 +16,7 @@
       "~/*": ["src/web/*"],
       "common/*": ["../studio-be/src/common/*"],
       "botpress/shared": ["../ui-shared/src/typings.d.ts"],
-      "botpress/sdk": ["../studio-be/src/sdk/botpress.d.ts"]
+      "botpress/sdk": ["../typings/sdk/botpress.d.ts"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],

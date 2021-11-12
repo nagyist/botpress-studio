@@ -14,7 +14,7 @@
     "outDir": "./out",
     "typeRoots": ["./src/typings", "./node_modules/@types", "../../node_modules/@types"],
     "paths": {
-      "botpress/sdk": ["./sdk/botpress.d.ts"]
+      "botpress/sdk": ["../../typings/sdk/botpress.d.ts"]
     },
     "types": ["reflect-metadata", "jest"]
   },
