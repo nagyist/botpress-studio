@@ -83,7 +83,9 @@ export class Botpress {
     await this.initializeServices()
     await this.deployAssets()
     await this.startServer()
-    await this.discoverBots()
+
+    // We're no longer pre-loading bots, Botpress Server will mount them individually
+    // await this.discoverBots()
 
     AppLifecycle.setDone(AppLifecycleEvents.BOTPRESS_READY)
   }
